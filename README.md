@@ -84,7 +84,7 @@ The list of available arguments can be obtained by launching `python main.py --h
 Some options are left from [the original repository](https://github.com/v-iashin/video_features/tree/specvqgan) and have no effect on the behavior of the script due to the removal of unused models.
 
 # Credits
-The code is based on work from [Video Features](https://github.com/v-iashin/video_features/tree/specvqgan) repository (branch `specvqgan`) by [Vladimir Iashin](https://github.com/v-iashin) and other contributors.
+The code is based on work from [Video Features](https://github.com/v-iashin/video_features/tree/specvqgan) repository (branch `specvqgan`).
 
 We added the ability to extract the features from [EfficientNetV2](https://arxiv.org/abs/2104.00298), and removed any models we didn't use, thus keeping only the [ResNet](https://arxiv.org/abs/1512.03385) models.
 
