@@ -1,3 +1,8 @@
+"""
+LICENSE:
+The wrapping code is under MIT, yet, it utilizes `torchvision` library which is under [BSD 3-Clause "New" or "Revised" License](https://github.com/pytorch/vision/blob/master/LICENSE).
+"""
+
 import os
 from typing import Dict, Union
 
