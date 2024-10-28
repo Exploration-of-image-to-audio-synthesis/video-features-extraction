@@ -1,14 +1,12 @@
-
-<div align="center">
-
 # Video Feature Extraction Using ResNet and EfficientNetV2
+<div align="center">
 
 <img src="./docs/_assets/base.png" width="300" />
 </div>
 
 This repository provides scripts to extract frame-wise features from videos using either [ResNet](https://arxiv.org/abs/1512.03385) or [EfficientNetV2](https://arxiv.org/abs/2104.00298) models, both pre-trained on the 1k ImageNet dataset. The features are extracted from the pre-classification layer.
 
-The extraction scripts are based on the [torchvision models](https://pytorch.org/vision/0.19/models.html#classification). For each frame, the script outputs feature vectors, timestamps in ms, and the video’s fps. Frame-wise transformations and augmentations are also applied as part of the extraction process.
+The extraction scripts are based on the [torchvision models](https://pytorch.org/vision/0.19/models.html#classification). For each frame, the script outputs feature vectors, timestamps in ms, and the video’s FPS. Frame-wise transformations and augmentations are also applied as part of the extraction process.
 
 ## Model-specific information
 > [!IMPORTANT]
@@ -16,6 +14,12 @@ The extraction scripts are based on the [torchvision models](https://pytorch.org
 > * For [ResNet](https://arxiv.org/abs/1512.03385) models: `num_frames * 2048`
 > * For [EfficientNetV2-S](https://arxiv.org/abs/2104.00298) models: `num_frames * 1280`
 
+## Paths for files from VAS dataset
+The files `sample/vas_train.txt` and `sample/vas_valid.txt` contain the file paths for the videos from the [Visually Aligned Sound dataset](https://arxiv.org/abs/2008.00820) which is the primary dataset for all our experiments. 
+
+These files have been kept for convenience, and can be used for extracting features by providing them as the `--file_with_video_paths` parameter.
+
+The dataset itself can be downloaded by following the instructions from [the source code](https://github.com/PeihaoChen/regnet/tree/master).
 
 # Installation
 This guide assumes you already have Python installed on your system.
@@ -88,6 +92,7 @@ Additional credits:
 1. The [TorchVision implementation](https://pytorch.org/vision/0.19/models.html#classification)
 2. The [ResNet paper](https://arxiv.org/abs/1512.03385)
 3. The [EfficientNetV2 paper](https://arxiv.org/abs/2104.00298)
+4. The [Visually Aligned Sounds paper](https://arxiv.org/abs/2008.00820)
 
 # License
 
