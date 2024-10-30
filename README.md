@@ -1,5 +1,6 @@
-# Video Feature Extraction Using ResNet and EfficientNetV2
 <div align="center">
+
+# Video Feature Extraction Using ResNet and EfficientNetV2
 
 <img src="./docs/_assets/base.png" width="300" />
 </div>
@@ -38,10 +39,14 @@ conda env create -f conda_env.yml
 
 # Usage
 ## Model-specific information
+Available variants:
+- [ResNet](https://arxiv.org/abs/1512.03385) variants available: ResNet18, ResNet34, ResNet50, ResNet101, ResNet152.
+- [EfficientNetV2](https://arxiv.org/abs/2104.00298) variants available: EfficientNetV2-S, EfficientNetV2-L.
+
 > [!IMPORTANT]
 > Even though the usage is very similar for both ResNet and EfficientNetV2 models, note that the output dimensions for these two models differ from each other: 
 > * For [ResNet](https://arxiv.org/abs/1512.03385) models: `num_frames * 2048`
-> * For [EfficientNetV2-S](https://arxiv.org/abs/2104.00298) models: `num_frames * 1280`
+> * For [EfficientNetV2](https://arxiv.org/abs/2104.00298) models: `num_frames * 1280`
 
 ## Examples
 
@@ -50,7 +55,7 @@ Start by activating the environment
 conda activate video_features
 ```
 
-The example is provided for the ResNet-50 flavour, but the following examples also work for ResNet-18,34,101,152 as well as EfficientNetV2-S.
+The example is provided for the ResNet-50 variant, but the following examples also work for other models, including EfficientNetV2 variants.
 ```bash
 python main.py \
     --feature_type resnet50 \
@@ -85,7 +90,7 @@ python main.py \
 > [!TIP] 
 > If you experience a TypeError `'NoneType object is not subscriptable` when launching `main.py`, make sure that you're providing the list of `device_ids` as an argument when launching the script.
 
-### All arguments
+### Other arguments
 
 The list of available arguments can be obtained by launching `python main.py --help`.
 
