@@ -4,15 +4,15 @@
 <img src="./docs/_assets/base.png" width="300" />
 </div>
 
-This repository provides scripts to extract frame-wise features from videos using either [ResNet](https://arxiv.org/abs/1512.03385) or [EfficientNetV2](https://arxiv.org/abs/2104.00298) models, both pre-trained on the 1k ImageNet dataset. The features are extracted from the pre-classification layer.
+# Overview
+This repository provides scripts to extract frame-wise features from videos using either [ResNet](https://arxiv.org/abs/1512.03385) or [EfficientNetV2](https://arxiv.org/abs/2104.00298) models, both pre-trained on the 1k ImageNet dataset. 
 
-The extraction scripts are based on the [torchvision models](https://pytorch.org/vision/0.19/models.html#classification). For each frame, the script outputs feature vectors, timestamps in ms, and the video’s FPS. Frame-wise transformations and augmentations are also applied as part of the extraction process.
+The features are extracted from the pre-classification layer.
 
-## Model-specific information
-> [!IMPORTANT]
-> Note that the output dimensions for these two models differ from each other: 
-> * For [ResNet](https://arxiv.org/abs/1512.03385) models: `num_frames * 2048`
-> * For [EfficientNetV2-S](https://arxiv.org/abs/2104.00298) models: `num_frames * 1280`
+## Extraction scripts
+The extraction scripts are based on the [torchvision models](https://pytorch.org/vision/0.19/models.html#classification). 
+
+For each frame, the script outputs feature vectors, timestamps in ms, and the video’s FPS. Frame-wise transformations and augmentations are also applied as part of the extraction process.
 
 ## Paths for files from VAS dataset
 The files `sample/vas_train.txt` and `sample/vas_valid.txt` contain the file paths for the videos from the [Visually Aligned Sound dataset](https://arxiv.org/abs/2008.00820) which is the primary dataset for all our experiments. 
@@ -26,7 +26,7 @@ This guide assumes you already have Python installed on your system.
 
 The installation process is the same whether you will use the ResNet models or EfficientNetV2
 
-## Set up the Environment for ResNet and EfficientNetV2
+## Set up the Environment
 Setup `conda` environment. Requirements are in file `conda_env.yml`
 ```bash
 # it will create a new conda environment called 'video_features' on your machine
@@ -34,11 +34,16 @@ conda env create -f conda_env.yml
 ```
 
 > [!NOTE]
-> `conda_env.yml` file uses PyTorch with CUDA version 12.1. If you're using a different version, or will use ROCm or CPU training, you might need to install them manually according to the [official PyTorch installation guide](https://pytorch.org/get-started/locally/).
+> `conda_env.yml` file uses PyTorch with CUDA version 12.1. If you're using a different version, or will use ROCm or CPU training, you might need to install them manually or modify the environmnet file according to the [official PyTorch installation guide](https://pytorch.org/get-started/locally/).
 
-# Examples
-> [!TIP] 
-> If you experience a TypeError `'NoneType object is not subscriptable` when launching `main.py`, make sure that you're providing the list of `device_ids` as an argument when launching the script.
+# Usage
+## Model-specific information
+> [!IMPORTANT]
+> Even though the usage is very similar for both ResNet and EfficientNetV2 models, note that the output dimensions for these two models differ from each other: 
+> * For [ResNet](https://arxiv.org/abs/1512.03385) models: `num_frames * 2048`
+> * For [EfficientNetV2-S](https://arxiv.org/abs/2104.00298) models: `num_frames * 1280`
+
+## Examples
 
 Start by activating the environment
 ```bash
@@ -77,7 +82,10 @@ python main.py \
     --video_paths ./sample/v_ZNVhz7ctTq0.mp4 ./sample/v_GGSY1Qvo990.mp4
 ```
 
-# All arguments
+> [!TIP] 
+> If you experience a TypeError `'NoneType object is not subscriptable` when launching `main.py`, make sure that you're providing the list of `device_ids` as an argument when launching the script.
+
+### All arguments
 
 The list of available arguments can be obtained by launching `python main.py --help`.
 
