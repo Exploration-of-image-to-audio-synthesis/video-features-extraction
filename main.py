@@ -15,7 +15,7 @@ def parallel_feature_extraction(args):
     if args.feature_type in ['resnet18', 'resnet34', 'resnet50', 'resnet101', 'resnet152']:
         from models.resnet.extract_resnet import ExtractResNet
         extractor = ExtractResNet(args)
-    elif args.feature_type == 'efficientnet_v2_s':
+    elif args.feature_type in ['efficientnet_v2_s', 'efficientnet_v2_l']:
         from models.efficientnet.extract_efficientnet import ExtractEfficientNet
         extractor = ExtractEfficientNet(args)
     else:
@@ -40,7 +40,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Extract Features')
     parser.add_argument('--feature_type', required=True,
                         choices=['resnet18', 'resnet34', 'resnet50', 'resnet101',
-                                 'resnet152', 'efficientnet_v2_s'])
+                                 'resnet152', 'efficientnet_v2_s', 'efficientnet_v2_l'])
     parser.add_argument('--video_paths', nargs='+', help='space-separated paths to videos')
     parser.add_argument('--file_with_video_paths', help='.txt file where each line is a path')
     parser.add_argument('--device_ids', type=int, nargs='+', help='space-separated device ids')

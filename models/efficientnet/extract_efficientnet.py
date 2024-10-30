@@ -15,7 +15,7 @@ from tqdm import tqdm
 from utils.utils import (action_on_extraction, form_list_from_user_input,
                          reencode_video_with_diff_fps,
                          show_predictions_on_dataset)
-from torchvision.models.efficientnet import EfficientNet_V2_S_Weights
+from torchvision.models.efficientnet import EfficientNet_V2_S_Weights, EfficientNet_V2_L_Weights
 # import traceback
 
 
@@ -58,6 +58,8 @@ class ExtractEfficientNet(torch.nn.Module):
 
         if self.feature_type == 'efficientnet_v2_s':
             model = models.efficientnet_v2_s(weights=EfficientNet_V2_S_Weights.DEFAULT)
+        elif self.feature_type == 'efficientnet_v2_l':
+            model = models.efficientnet_v2_l(weights=EfficientNet_V2_L_Weights.DEFAULT)
         else:
             raise NotImplementedError
 
