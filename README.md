@@ -6,7 +6,7 @@
 </div>
 
 # Overview
-This repository provides scripts to extract frame-wise features from videos using either [ResNet](https://arxiv.org/abs/1512.03385) or [EfficientNetV2](https://arxiv.org/abs/2104.00298) models, both pre-trained on the 1k ImageNet dataset. 
+This repository provides scripts to extract frame-wise features from videos using either [ResNet](https://arxiv.org/abs/1512.03385) or [EfficientNetV2](https://arxiv.org/abs/2104.00298) models, both pre-trained on the 1k ImageNet dataset. It was created for the coursework at the *National University of Kyiv-Mohyla Academy*, titled *Exploration of Multimodal Approaches in Image-to-Audio Synthesis*. Full details on our coursework can be found [here](https://github.com/Exploration-of-image-to-audio-synthesis).
 
 The features are extracted from the pre-classification layer.
 
