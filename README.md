@@ -99,13 +99,13 @@ Some options are left from [the original repository](https://github.com/v-iashin
 # Credits
 The code is based on work from [Video Features](https://github.com/v-iashin/video_features/tree/specvqgan) repository (branch `specvqgan`).
 
-We added the ability to extract the features from [EfficientNetV2](https://arxiv.org/abs/2104.00298), and removed any models we didn't use, thus keeping only the [ResNet](https://arxiv.org/abs/1512.03385) models.
+We added the ability to extract features from [EfficientNetV2](https://arxiv.org/abs/2104.00298), and removed any models we didn't use, thus keeping only the [ResNet](https://arxiv.org/abs/1512.03385) models.
 
 Additional credits:
-1. The [TorchVision implementation](https://pytorch.org/vision/0.19/models.html#classification)
-2. The [ResNet paper](https://arxiv.org/abs/1512.03385)
-3. The [EfficientNetV2 paper](https://arxiv.org/abs/2104.00298)
-4. The [Visually Aligned Sounds paper](https://arxiv.org/abs/2008.00820)
+1. [TorchVision implementations of models](https://pytorch.org/vision/0.19/models.html#classification)
+2. [ResNet paper](https://arxiv.org/abs/1512.03385)
+3. [EfficientNetV2 paper](https://arxiv.org/abs/2104.00298)
+4. [Visually Aligned Sounds paper](https://arxiv.org/abs/2008.00820)
 
 # License
 
